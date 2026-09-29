@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Blog</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="wrap">
+    <header class="site-header">
+      <a class="site-title" href="index.html">The Blog</a>
+      <p class="site-tagline">Notes on things worth writing down.</p>
+    </header>
+
+    <main>
+      <div class="state state--loading" id="loadingState">
+        <div class="skeleton__card"></div>
+        <div class="skeleton__card"></div>
+        <div class="skeleton__card"></div>
+      </div>
+
+      <div class="state state--error" id="errorState" hidden>
+        <p>Couldn't load the posts. Check your connection and try again.</p>
+      </div>
+
+      <div class="state state--empty" id="emptyState" hidden>
+        <p>No posts yet — check back soon.</p>
+      </div>
+
+      <ul class="post-list" id="postList" hidden></ul>
+    </main>
+
+    <footer class="site-footer">
+      <p>Built with plain HTML, CSS, JS, and Markdown.</p>
+    </footer>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+  <script src="js/markdown.js"></script>
+  <script src="js/list.js"></script>
+</body>
+</html>
