@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title id="pageTitle">Post — The Blog</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="wrap">
+    <header class="site-header">
+      <a class="site-title" href="index.html">The Blog</a>
+      <a class="back-link" href="index.html">&larr; All posts</a>
+    </header>
+
+    <main>
+      <div class="state state--loading" id="loadingState">
+        <div class="skeleton__line skeleton__line--title"></div>
+        <div class="skeleton__line skeleton__line--meta"></div>
+        <div class="skeleton__line"></div>
+        <div class="skeleton__line"></div>
+        <div class="skeleton__line skeleton__line--short"></div>
+      </div>
+
+      <div class="state state--error" id="errorState" hidden>
+        <p id="errorMessage">Couldn't find that post.</p>
+        <a class="back-link" href="index.html">&larr; Back to all posts</a>
+      </div>
+
+      <article class="post" id="postArticle" hidden>
+        <header class="post__header">
+          <h1 class="post__title" id="postTitle"></h1>
+          <div class="post__meta">
+            <time id="postDate"></time>
+            <span class="post__tags" id="postTags"></span>
+          </div>
+        </header>
+        <div class="post__body" id="postBody"></div>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <p>Built with plain HTML, CSS, JS, and Markdown.</p>
+    </footer>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+  <script src="js/markdown.js"></script>
+  <script src="js/post.js"></script>
+</body>
+</html>
